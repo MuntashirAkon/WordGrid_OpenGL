@@ -111,6 +111,12 @@ void playSoundFromMemory(Audio * audio, int volume);
  */
 void playMusicFromMemory(Audio * audio, int volume);
 
+
+/*
+ * Stop the current sound or music.
+ */
+void stopSound();
+
 /*
  * Free all audio related variables
  * Note, this needs to be run even if initAudio fails, because it frees the global audio device

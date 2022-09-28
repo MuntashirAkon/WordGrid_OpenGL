@@ -467,17 +467,18 @@ static void addAudio(Audio *root, Audio *newAudio)
     root->next = newAudio;
 }
 
-// void terminateAudio()
-// {
-//     SDL_LockAudioDevice(gDevice->device);
-//     Audio *root = (Audio *)(gDevice->want).userdata;
-//     if (root == NULL)
-//     {
-//         return;
-//     }
-//     if (root->next != NULL)
-//     {
-//         (gDevice->want).userdata = root->next;
-//     }
-//     SDL_UnlockAudioDevice(gDevice->device);
-// }
+void stopSound()
+{
+    SDL_LockAudioDevice(gDevice->device);
+    Audio *root = (Audio *)(gDevice->want).userdata;
+    if (root == NULL)
+    {
+        return;
+    }
+    // FIXME: Causing crash for some reason
+    if (root->next != NULL)
+    {
+        (gDevice->want).userdata = root->next;
+    }
+    SDL_UnlockAudioDevice(gDevice->device);
+}

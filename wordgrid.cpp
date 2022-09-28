@@ -1,8 +1,22 @@
 /**
  * Word Grid Game.
- * 
+ *
  * Author: Muntashir Al-Islam <muntashirakon@riseup.net>
  */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#else
+#include <GL/glut.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
+#endif
 
 #include "timer.h"
 #include "glhelpers.h"
